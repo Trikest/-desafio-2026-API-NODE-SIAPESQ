@@ -11,3 +11,36 @@ generator client {
 datasource db {
   provider = "postgresql"
 }
+model User {
+  id          String   @id @default(uuid())
+  name        String
+  email       String   @unique
+  password    String
+
+  species     Species[]
+}
+
+model Species {
+  id              String   @id @default(uuid())
+  commonName      String
+  scientificName  String
+  category        String
+  latitude        Float
+  longitude       Float
+  createdAt       DateTime @default(now())
+
+  userId          String
+  user            User @relation(fields: [userId], references: [id])
+
+  climate         ClimateData?
+}
+
+model ClimateData {
+  id          String  @id @default(uuid())
+  temperature Float?
+  humidity    Float?
+  description String?
+
+  speciesId   String  @unique
+  species     Species @relation(fields: [speciesId], references: [id])
+}
