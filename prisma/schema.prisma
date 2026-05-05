@@ -1,38 +1,30 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Get a free hosted Postgres database in seconds: `npx create-db`
-
 generator client {
-  provider = "prisma-client"
-  output   = "../generated/prisma"
+  provider = "prisma-client-js"
 }
 
 datasource db {
   provider = "postgresql"
 }
-model User {
-  id          String   @id @default(uuid())
-  name        String
-  email       String   @unique
-  password    String
 
-  species     Species[]
+model User {
+  id       String    @id @default(uuid())
+  name     String
+  email    String    @unique
+  password String
+  species  Species[]
 }
 
 model Species {
-  id              String   @id @default(uuid())
-  commonName      String
-  scientificName  String
-  category        String
-  latitude        Float
-  longitude       Float
-  createdAt       DateTime @default(now())
-
-  userId          String
-  user            User @relation(fields: [userId], references: [id])
-
-  climate         ClimateData?
+  id             String       @id @default(uuid())
+  commonName     String
+  scientificName String
+  category       String
+  latitude       Float
+  longitude      Float
+  createdAt      DateTime     @default(now())
+  userId         String
+  climate        ClimateData?
+  user           User         @relation(fields: [userId], references: [id])
 }
 
 model ClimateData {
@@ -40,7 +32,6 @@ model ClimateData {
   temperature Float?
   humidity    Float?
   description String?
-
   speciesId   String  @unique
   species     Species @relation(fields: [speciesId], references: [id])
 }
