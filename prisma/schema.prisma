@@ -7,24 +7,42 @@ datasource db {
 }
 
 model User {
-  id       String    @id @default(uuid())
-  name     String
-  email    String    @unique
-  password String
-  species  Species[]
+  id         String     @id @default(uuid())
+  name       String
+  email      String     @unique
+  password   String
+  species    Species[]
+  categories Category[]
 }
 
 model Species {
-  id             String       @id @default(uuid())
+  id             String @id @default(uuid())
   commonName     String
   scientificName String
-  category       String
-  latitude       Float
-  longitude      Float
-  createdAt      DateTime     @default(now())
-  userId         String
-  climate        ClimateData?
-  user           User         @relation(fields: [userId], references: [id])
+
+  categoryId String
+  category   Category @relation(fields: [categoryId], references: [id])
+
+  latitude  Float
+  longitude Float
+  createdAt DateTime @default(now())
+
+  userId String
+  user   User   @relation(fields: [userId], references: [id])
+
+  climate ClimateData?
+}
+
+model Category {
+  id   String @id @default(uuid())
+  name String
+
+  userId String
+  user   User   @relation(fields: [userId], references: [id])
+
+  species Species[]
+
+  @@unique([name, userId])
 }
 
 model ClimateData {
