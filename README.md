@@ -91,7 +91,7 @@ Crie um arquivo `.env`:
 ```env
 DATABASE_URL="postgresql://USER:PASSWORD@HOST:PORT/DATABASE"
 JWT_SECRET="sua_chave_jwt"
-HG_BRASIL_API_KEY="sua_api_key"
+WEATHER_API_KEY="sua_api_key"
 ```
 
 ---
