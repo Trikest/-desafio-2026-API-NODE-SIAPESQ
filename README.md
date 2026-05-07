@@ -1,98 +1,171 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
-</p>
+# 🧠 SIAPESQ - API REST para Gerenciamento de Espécies
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+API REST desenvolvida como desafio técnico para a SIAPESQ, utilizando NestJS, Prisma ORM e PostgreSQL.
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+A aplicação permite:
 
-## Description
+- Cadastro de espécies
+- Autenticação com JWT
+- Filtros e estatísticas
+- Integração com API externa de clima
+- Testes unitários e de integração
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+---
 
-## Project setup
+# 🚀 Tecnologias Utilizadas
 
-```bash
-$ npm install
-```
+## Backend
 
-## Compile and run the project
+- Node.js
+- TypeScript
+- NestJS
 
-```bash
-# development
-$ npm run start
+## Banco de Dados
 
-# watch mode
-$ npm run start:dev
+- PostgreSQL
+- Prisma ORM
 
-# production mode
-$ npm run start:prod
-```
+## Autenticação
 
-## Run tests
+- JWT (JSON Web Token)
+- Passport JWT
+- Bcrypt
 
-```bash
-# unit tests
-$ npm run test
+## Validação
 
-# e2e tests
-$ npm run test:e2e
+- class-validator
+- class-transformer
 
-# test coverage
-$ npm run test:cov
-```
+## Integração Externa
 
-## Deployment
+- HG Brasil Weather API
 
-When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
+## Testes
 
-If you are looking for a cloud-based platform to deploy your NestJS application, check out [Mau](https://mau.nestjs.com), our official platform for deploying NestJS applications on AWS. Mau makes deployment straightforward and fast, requiring just a few simple steps:
+- Jest
+- Supertest
 
-```bash
-$ npm install -g @nestjs/mau
-$ mau deploy
-```
+## Deploy
 
-With Mau, you can deploy your application in just a few clicks, allowing you to focus on building features rather than managing infrastructure.
+- Railway
 
-## Resources
+---
 
-Check out a few resources that may come in handy when working with NestJS:
+# 🌐 API Online
 
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
-- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
-- Deploy your application to AWS with the help of [NestJS Mau](https://mau.nestjs.com) in just a few clicks.
-- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
-- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
-- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
-- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
+```txt
+https://desafio-2026-api-node-siapesq-production.up.railway.app/
 
-## Support
+📦 Funcionalidades
+🔐 Autenticação
+Registro de usuário
+Login com JWT
+Rotas protegidas
+🌿 Espécies
+Criar espécie
+Listar espécies
+Buscar por nome
+Filtrar por categoria
+Buscar por proximidade
+Atualizar espécie
+Remover espécie
+📊 Estatísticas
+Quantidade de espécies por categoria
+🌍 Integração Externa
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+Ao cadastrar uma espécie, a API pode buscar automaticamente:
 
-## Stay in touch
+Temperatura
+Umidade
+Descrição climática
 
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+com base na latitude e longitude.
 
-## License
+🛠️ Como Executar o Projeto
+1. Clone o repositório
+git clone https://github.com/SEU_USUARIO/SEU_REPOSITORIO.git
+2. Acesse a pasta
+cd api-especies
+3. Instale as dependências
+npm install
+4. Configure as variáveis de ambiente
 
-Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+Crie um arquivo .env:
+
+DATABASE_URL="postgresql://USER:PASSWORD@HOST:PORT/DATABASE"
+JWT_SECRET="sua_chave_jwt"
+WEATHER_API_KEY="sua_api_key"
+5. Execute as migrations
+npx prisma migrate dev
+6. Gere o Prisma Client
+npx prisma generate
+7. Execute a aplicação
+npm run start:dev
+
+Servidor:
+
+http://localhost:3000
+🧪 Executando os Testes
+Testes unitários
+npm run test
+Testes de integração
+npm run test:e2e
+📮 Collection Postman
+
+A collection do Postman está disponível no projeto:
+
+SIAPESQ_API.postman_collection.json
+🔑 Autenticação
+
+As rotas protegidas utilizam JWT.
+
+Enviar no header:
+
+Authorization: Bearer TOKEN
+📌 Principais Endpoints
+Auth
+Registrar usuário
+POST /auth/register
+Login
+POST /auth/login
+Categories
+Criar categoria
+POST /categories
+Listar categorias
+GET /categories
+Species
+Criar espécie
+POST /species
+Listar espécies
+GET /species
+Buscar por nome
+GET /species?search=Arara
+Filtrar por categoria
+GET /species?categoryId=ID
+Buscar por proximidade
+GET /species?latitude=-7.11&longitude=-34.84&radius=10
+Estatísticas
+GET /species/stats/categories
+🧱 Arquitetura
+
+O projeto foi organizado utilizando arquitetura modular do NestJS:
+
+auth
+user
+species
+categories
+weather
+prisma
+
+Cada módulo contém:
+
+controller
+service
+dto
+testes
+🔒 Segurança
+Senhas criptografadas com bcrypt
+JWT para autenticação
+Validação de DTOs
+Proteção de rotas
+Controle de ownership dos dados
